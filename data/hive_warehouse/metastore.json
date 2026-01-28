@@ -1,0 +1,80 @@
+{
+  "iot_measurements": {
+    "location": "data/hdfs_streaming/raw/data.parquet",
+    "format": "parquet",
+    "columns": [
+      {
+        "name": "source_type",
+        "type": "string"
+      },
+      {
+        "name": "machine_id",
+        "type": "string"
+      },
+      {
+        "name": "temperature",
+        "type": "double"
+      },
+      {
+        "name": "pressure",
+        "type": "double"
+      },
+      {
+        "name": "vibration",
+        "type": "double"
+      },
+      {
+        "name": "timestamp",
+        "type": "timestamp"
+      },
+      {
+        "name": "batch_id",
+        "type": "string"
+      }
+    ]
+  },
+  "iot_anomalies": {
+    "location": "data/hdfs_streaming/anomalies/anomalies.parquet",
+    "format": "parquet",
+    "columns": [
+      {
+        "name": "machine_id",
+        "type": "string"
+      },
+      {
+        "name": "temperature",
+        "type": "double"
+      },
+      {
+        "name": "pressure",
+        "type": "double"
+      },
+      {
+        "name": "anomaly_type",
+        "type": "string"
+      }
+    ]
+  },
+  "iot_clusters": {
+    "location": "data/hdfs_streaming/clusters/clustered.parquet",
+    "format": "parquet",
+    "columns": [
+      {
+        "name": "machine_id",
+        "type": "string"
+      },
+      {
+        "name": "temperature",
+        "type": "double"
+      },
+      {
+        "name": "pressure",
+        "type": "double"
+      },
+      {
+        "name": "cluster",
+        "type": "int"
+      }
+    ]
+  }
+}

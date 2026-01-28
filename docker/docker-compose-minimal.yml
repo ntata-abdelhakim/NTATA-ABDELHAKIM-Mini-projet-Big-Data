@@ -1,0 +1,16 @@
+﻿services:
+  namenode:
+    image: apache/hadoop:3
+    container_name: namenode
+    ports:
+      - "9870:9870"
+    command: bin/hdfs namenode
+
+  datanode:
+    image: apache/hadoop:3
+    container_name: datanode
+    depends_on:
+      - namenode
+    command: bin/hdfs datanode
+    environment:
+      CORE_CONF_fs_defaultFS: hdfs://namenode:9000
